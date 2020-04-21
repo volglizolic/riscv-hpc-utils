@@ -8,8 +8,7 @@
 #include <string.h>
 
 
-#include "CSR_codes.h"
-#include "utils.h"
+#include "../../utils/CSR_codes.h"
 #include "CSR_snapshot.h"
 
 

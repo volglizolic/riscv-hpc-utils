@@ -10,8 +10,8 @@
 #include <errno.h>
 #include <string.h>
 
+#include "../../utils/CSR_codes.h"
 #include "CSR_snapshot.h"
-#include "utils.h"
 
 void print_snapshot(CSR_snapshot *res){
     printf("Cycles:\t%ld\n"

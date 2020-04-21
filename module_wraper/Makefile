@@ -6,5 +6,8 @@ module_wraper: $(SRCS)/*
 	$(CC) $(CFLAGS) $(SRCS)/* -o $@
 	cp $@ $(OUTPUT)/$@
 
-.PHONY: default
+clean:
+	rm -f module_wraper
+
+.PHONY: default module_wraper
 

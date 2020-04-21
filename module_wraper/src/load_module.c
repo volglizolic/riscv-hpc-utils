@@ -32,7 +32,7 @@ int main(int argc, char** argv){
     CPU_ZERO(&cpuset);
     CPU_SET(atoi(argv[3]), &cpuset);
     if ((k = pthread_setaffinity_np(pthread_self(), sizeof(cpu_set_t), &cpuset))){
-        fprintf(stderr,"Could not set cpu affinity to %d. Output: %d.\t%s\n", argv[3], k, strerror(errno));
+        fprintf(stderr,"Could not set cpu affinity to %d. Output: %d.\t%s\n", atoi(argv[3]), k, strerror(errno));
     }
 
     char *const laod_parm_list[] = {"/sbin/insmod", argv[2], NULL};

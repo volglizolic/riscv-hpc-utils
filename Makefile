@@ -3,12 +3,17 @@
 #SRCS =./src
 #OUTPUT =../bin
 
-default: counter_wraper module_wraper
+SUBPROJECTS = counter_wraper module_wraper csr_manipulation_test
 
-counter_wraper:
-	cd $@ && $(MAKE)
+all: $(SUBPROJECTS)
 
-module_wraper:
-	cd $@ && $(MAKE)
+$(SUBPROJECTS):
+	$(MAKE) -C $@
 
-.PHONY: default counter_wraper module_wraper
+clean:
+	rm -rf bin/*
+	for DIR in $(SUBPROJECTS); do \
+		$(MAKE) -C $$DIR clean; \
+	done
+
+.PHONY: all $(SUBPROJECTS)

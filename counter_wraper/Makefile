@@ -6,5 +6,8 @@ counter_wraper: $(SRCS)/*
 	$(CC) $(CFLAGS) $(SRCS)/* -o $@
 	cp $@ $(OUTPUT)/$@
 
-.PHONY: default
+clean:
+	rm -f counter_wraper
+
+.PHONY: default counter_wraper
 
