@@ -28,10 +28,12 @@ int main(int argc, char** argv){
 
     unsigned long counter = atoi(argv[1]), event = atoi(argv[2]);
     if ( event == 0)
-        write_csr(CSR_MHPMEVENT3, INTEGER_MULTIPLICATION_INSTRUCTION_RETIRED_EVENT_MASK);
+        write_csr(CSR_MHPMEVENT3, INTEGER_MULTIPLICATION_INSTRUCTION_RETIRED_EVENT);
     else
-        write_csr(CSR_MHPMEVENT3,INTEGER_DIVISION_INSTRUCTION_RETIRED_EVENT_MASK);
+        write_csr(CSR_MHPMEVENT3, INTEGER_DIVISION_INSTRUCTION_RETIRED_EVENT);
 
     printf("Made it thus far\nShould be %lu, is %lu\n", event, read_csr(CSR_MHPMEVENT3));
     return 0;
+
+
 }

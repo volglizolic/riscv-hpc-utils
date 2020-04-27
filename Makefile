@@ -3,7 +3,7 @@
 #SRCS =./src
 #OUTPUT =../bin
 
-SUBPROJECTS = counter_wraper module_wraper csr_manipulation_test
+SUBPROJECTS = counter_wraper module_wraper csr_manipulation_test performance_counters_util
 
 all: $(SUBPROJECTS)
 

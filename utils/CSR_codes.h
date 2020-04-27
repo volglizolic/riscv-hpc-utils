@@ -5,14 +5,6 @@
 #ifndef COUNTERS_CSR_CODES_H
 #define COUNTERS_CSR_CODES_H
 
-#define HELPER(x) #x
-#define read_csr(reg) ({ unsigned long __tmp; \
-  asm volatile ("csrr %0, " HELPER(reg) : "=r"(__tmp)); \
-  __tmp; })
-
-#define write_csr(reg, val) ({ \
-  asm volatile ("csrw " HELPER(reg) ", %0" :: "rK"(val)); })
-
 #define CSR_CYCLE 0xc00
 #define CSR_TIME 0xc01
 #define CSR_INSTRET 0xc02
@@ -107,26 +99,6 @@
 #define CSR_MHPMEVENT30 0x33e
 #define CSR_MHPMEVENT31 0x33f
 
-#define EXCEPTION_TAKEN_EVENT_MASK ( 1 << 8 )
-#define INTEGER_LOAD_INSTRUCTION_RETIRED_EVENT_MASK ( 1 << 9 )
-#define INTEGER_STORE_INSTRUCTION_RETIRED_EVENT_MASK ( 1 << 10 )
-#define ATOMIC_MEMORY_OPERATION_RETIRED_EVENT_MASK ( 1 << 11 )
-#define SYSTEM_INSTRUCTION_RETIRED_EVENT_MASK ( 1 << 12 )
-#define INTEGER_ARITHMETIC_INSTRUCTION_RETIRED_EVENT_MASK ( 1 << 13 )
-#define CONDITIONAL_BRANCH_RETIRED_EVENT_MASK (1 << 14)
-#define JAL_INSTRUCTION_RETIRED_EVENT_MASK ( 1 << 15 )
-#define JALR_INSTRUCTION_RETIRED_EVENT_MASK ( 1 << 16 )
-#define INTEGER_MULTIPLICATION_INSTRUCTION_RETIRED_EVENT_MASK ( 1 << 17 )
-#define INTEGER_DIVISION_INSTRUCTION_RETIRED_EVENT_MASK ( 1 << 18 )
 
-//17 Integer multiplication instruction retired
-//18 Integer division instruction retired
-//19 Floating-point load instruction retired
-//20 Floating-point store instruction retired
-//21 Floating-point addition retired
-//22 Floating-point multiplication retired
-//23 Floating-point fused multiply-add retired
-//24 Floating-point division or square-root retired
-//25 Other floating-point instruction retired
 
 #endif //COUNTERS_CSR_CODES_H

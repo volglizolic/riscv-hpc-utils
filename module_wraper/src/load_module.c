@@ -12,6 +12,7 @@
 #include <errno.h>
 
 int main(int argc, char** argv){
+
     if (argc != 4){
         fprintf(stderr,"Usage: %s [load|unload] <module_name> <cpu_num>\n", argv[0]);
         exit(-1);
