@@ -1,2 +1,8 @@
 # Project exclude paths
 /cmake-build-debug/
+/hpc_utils_lib/obj/
+/hpc_utils/bin/
+/hpc_utils/tests/bin/
+/hpc_utils_lib/tests/bin/
+/to_push/
+/pushToBoard.sh

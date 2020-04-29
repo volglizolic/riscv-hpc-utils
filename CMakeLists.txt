@@ -3,22 +3,18 @@ project(Wraper C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(counter_wraper counter_wraper/src/main.c utils/CSR_codes.h counter_wraper/src/CSR_snapshot.c counter_wraper/src/CSR_snapshot.h)
+add_executable(hpc_utils hpc_utils/src/hpc_utils.c hpc_utils_lib/include/hpc_utils.h hpc_utils/src/help.c hpc_utils/src/help.h)
 
-add_executable(module_wraper
-        module_wraper/src/load_module.c
-        utils/CSR_codes.h)
+add_executable(hpc_utils_lib_tests
+        hpc_utils_lib/tests/src/csr_manipulation_test.c)
 
-add_executable(csr_manipulation_test
-        csr_manipulation_test/src/csr_manipulation_test.c
-        utils/CSR_codes.h)
+add_executable(additions_and_divisions
+        hpc_utils/tests/src/add_and_div.c)
 
-add_executable(performance_counters_util
-        performance_counters_util/src/testing.c
+add_executable(hpc_utils_lib
         utils/CSR_codes.h
-        performance_counters_util/include/hpc_utils.h
-        performance_counters_util/src/hpc_utils.c
-        performance_counters_util/src/fu540.h
-        performance_counters_util/src/event_definition.h
-        performance_counters_util/src/testing.c
-        performance_counters_util/src/asm.h)
+        hpc_utils_lib/include/hpc_utils.h
+        hpc_utils_lib/src/hpc_utils_lib.c
+        hpc_utils_lib/src/fu540.h
+        hpc_utils_lib/src/event_definition.h
+        utils/asm.h)

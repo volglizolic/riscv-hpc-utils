@@ -1,19 +1,23 @@
-#CC=riscv64-unknown-linux-gnu-gcc
-#CFLAGS += -pthread -static
-#SRCS =./src
-#OUTPUT =../bin
+SUBPROJECTS = hpc_utils_lib hpc_utils
 
-SUBPROJECTS = counter_wraper module_wraper csr_manipulation_test performance_counters_util
+default: $(SUBPROJECTS)
 
-all: $(SUBPROJECTS)
+all:
+	@for DIR in $(SUBPROJECTS); do \
+    	$(MAKE) -C $$DIR all; \
+    done
 
 $(SUBPROJECTS):
 	$(MAKE) -C $@
 
+tests:
+	@for DIR in $(SUBPROJECTS); do \
+    	$(MAKE) -C $$DIR tests; \
+    done
+
 clean:
-	rm -rf bin/*
-	for DIR in $(SUBPROJECTS); do \
+	@for DIR in $(SUBPROJECTS); do \
 		$(MAKE) -C $$DIR clean; \
 	done
 
-.PHONY: all $(SUBPROJECTS)
+.PHONY: default all $(SUBPROJECTS)

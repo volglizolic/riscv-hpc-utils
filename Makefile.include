@@ -1,6 +1,9 @@
 CC=riscv64-unknown-linux-gnu-gcc
-CFLAGS += -pthread -static -Wall
-SRCS =./src
-OUTPUT =../bin
+AR=riscv64-unknown-linux-gnu-ar
+CFLAGS += -Wall -Werror
+STATIC = -static
+PTHREAD = -pthread
+SRC_DIR =./src
+BIN_DIR?=./bin
 
 UTILS =../utils/*

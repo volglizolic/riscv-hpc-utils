@@ -5,4 +5,8 @@ if [ $# -ne 1 ]; then
 	exit
 fi
 
-scp -r ./bin/* root@$1:/root/
+cp -r ./hpc_utils/bin/* ./to_push/
+cp -r ./hpc_utils/tests/bin/* ./to_push/
+cp -r ./hpc_utils_lib/*.* ./to_push/
+cp -r ./hpc_utils_lib/tests/bin/* ./to_push/
+scp -r ./to_push/* root@$1:/root/
