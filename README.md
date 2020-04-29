@@ -4,7 +4,7 @@ in RISC-V architecture compliant platforms.
 
 hpc_utils is based on `libhpc_utils`.
 
-##Quick Start
+## Quick Start
 To build hpc_utils and libhpc_utils, simply run `make`.
 Currently libhpc_utils supports only SiFive's FU540-C000 U54. 
 For running on Freedom-U-SDK link libhpc_utils (`libhpc_utils.a`) 
